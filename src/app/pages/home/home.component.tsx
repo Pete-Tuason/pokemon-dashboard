@@ -1,13 +1,18 @@
 import classNames from './home.module.scss';
-import logo from './../../../assets/images/logo.png';
+import { Col, Row, Container } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export interface IHomePageProps { };
 
 const HomePage: React.FunctionComponent<IHomePageProps> = props => {
     return (
-        <div>
-            <p className={classNames.title}>Home</p>
-            <img className={classNames.logo} src={logo} alt={"logo"} />
+        <div className={classNames.home}>
+            <Container fluid>
+                <Row className='rows'>
+                    <Col md="3" className='columns'></Col>
+                    <Col md="6" className='columns'></Col>
+                </Row>
+            </Container>
         </div>
     );
 };
