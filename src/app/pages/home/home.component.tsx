@@ -2,13 +2,15 @@ import classNames from './home.module.scss';
 import { Col, Row, Container } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ColumnType } from '../../types/column.type';
-import { configuration } from '../../utils/config';
 import ListsComponent from '../../components/lists/lists.component';
 import CardsComponent from '../../components/cards/cards.component';
+import { clients } from '../../utils/clients';
 export interface IHomePageProps { };
 
 const HomePage: React.FunctionComponent<IHomePageProps> = props => {
-    const config: ColumnType[] = configuration.columns;
+    const clientName = 'pokemon';
+    const client = clients.find(o => o.name === clientName);
+    const config: ColumnType[] = client?.configuration?.columns ?? [];
 
     return (
         <div data-testid="home" className={classNames.home}>

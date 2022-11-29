@@ -1,7 +1,7 @@
 import { WidgetType } from '../../types/widget.type';
 import { CardSubtitle, CardTitle, List } from 'reactstrap';
 import classNames from './list.module.scss';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { PokemonSpeciesType } from '../../types/pokemon-species.type';
 
 export interface IListComponentProps {
@@ -10,17 +10,16 @@ export interface IListComponentProps {
 
 const ListComponent: React.FunctionComponent<IListComponentProps> = props => {
     const [pokemonList, setPokemonList] = useState<PokemonSpeciesType[] | []>([])
-    
-    const getPokemonCount = async () => {
+
+    const getPokemonList = useCallback(async () => {
         const response = await fetch(props.widget.api);
         const data = await response.json();
-
         setPokemonList(data.results);
-    }
+    }, [props.widget.api]);
 
     useEffect(() => {
-        getPokemonCount();
-    });
+        getPokemonList();
+    }, [getPokemonList]);
 
     return (
         <div data-testid="list" className={classNames.listContainer}>
