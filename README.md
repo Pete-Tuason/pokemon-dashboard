@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# Getting Started with Pokemon Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project aims to build a framework that allows to have a defined set of components that 
+can be reusable across multiple dashboards-clients. These dashboards can have different configurations
+in terms of the number of columns, amount of widgets, displaying different data, etc.
+
+## FrontEnd Task
+
+The end goal is to create a basic framework that allows us to reuse components, to
+easily build dashboards for different clients.
+
+The requirement is that based on the client (This could be a hardcoded variable, for
+now, ie `const client = “pokemon”;`) should be able to get a configuration file and
+build the dashboard based on that.
+
+Each “widget” has a type and a logic associated with it. In this case, we have two.
+The type “list”, which shows a list of elements and the “number” shows the count of
+elements
+
+## Test Checklist
+ - React
+ - Readme
+ - Functional programming
+ - Use of a linter
+ - Unit testing (Critical parts of the code is enough)
+ - If the configuration file is updated the dashboard would be changed
 
 ## Available Scripts
 
@@ -38,9 +61,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
