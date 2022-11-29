@@ -9,7 +9,7 @@ export interface IListsComponentProps {
 
 const ListsComponent: React.FunctionComponent<IListsComponentProps> = props => {
     return (
-        <div className={classNames.lists}>
+        <div data-testid="lists" className={classNames.lists}>
             <div className={classNames.listsContainer}>
                 <h1>{props.heading}</h1>
                 <div className={classNames.listsContent}>

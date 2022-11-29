@@ -4,7 +4,7 @@ export interface IAppComponentProps { };
 
 const AppComponent: React.FunctionComponent<IAppComponentProps> = props => {
     return (
-        <div className={classNames.app}>
+        <div data-testid="app" className={classNames.app}>
             <RouterOutlet></RouterOutlet>
         </div>
     );

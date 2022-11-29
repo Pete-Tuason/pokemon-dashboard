@@ -23,7 +23,7 @@ const ListComponent: React.FunctionComponent<IListComponentProps> = props => {
     });
 
     return (
-        <div className={classNames.listContainer}>
+        <div data-testid="list" className={classNames.listContainer}>
             <CardTitle tag="h4" className={classNames.listTitle}>
                 {props.widget.title}
             </CardTitle>

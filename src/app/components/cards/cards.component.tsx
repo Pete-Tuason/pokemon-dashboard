@@ -9,7 +9,7 @@ export interface ICardsComponentComponentProps {
 
 const CardsComponent: React.FunctionComponent<ICardsComponentComponentProps> = props => {
     return (
-        <div className={classNames.cards}>
+        <div data-testid="cards" className={classNames.cards}>
             <div className={classNames.cardsContainer}>
                 <h1>{props.heading}</h1>
                 <div className={classNames.cardsContent}>

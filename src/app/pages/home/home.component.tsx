@@ -11,7 +11,7 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
     const config: ColumnType[] = configuration.columns;
 
     return (
-        <div className={classNames.home}>
+        <div data-testid="home" className={classNames.home}>
             <Container className='grid-container height-100' fluid>
                 <Row className='text-center rows'>
                     {config.map((column: ColumnType, index: number) => (

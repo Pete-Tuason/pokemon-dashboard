@@ -10,7 +10,7 @@ export interface ICardComponentComponentProps {
 
 const CardComponent: React.FunctionComponent<ICardComponentComponentProps> = props => {
     const [pokemonCount, setPokemonCount] = useState(0)
-    
+
     const getPokemonCount = async () => {
         const response = await fetch(props.widget.api);
         const data: PokemonType = await response.json();
@@ -22,17 +22,19 @@ const CardComponent: React.FunctionComponent<ICardComponentComponentProps> = pro
     });
 
     return (
-        <Card className={classNames.card}>
-            <img alt="Sample" src="https://picsum.photos/300/200" />
-            <CardBody>
-                <CardTitle tag="h4" className={classNames.cardTitle}>
-                    {props.widget.title}
-                </CardTitle>
-                <CardSubtitle className="mb-2 text-muted" tag="h5">
-                    {pokemonCount.toString()}
-                </CardSubtitle>
-            </CardBody>
-        </Card>
+        <div data-testid="card">
+            <Card className={classNames.card}>
+                <img alt="Sample" src="https://picsum.photos/300/200" />
+                <CardBody>
+                    <CardTitle tag="h4" className={classNames.cardTitle}>
+                        {props.widget.title}
+                    </CardTitle>
+                    <CardSubtitle className="mb-2 text-muted" tag="h5">
+                        {pokemonCount.toString()}
+                    </CardSubtitle>
+                </CardBody>
+            </Card>
+        </div>
     );
 };
 
