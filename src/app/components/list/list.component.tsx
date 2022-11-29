@@ -1,12 +1,27 @@
 import { WidgetType } from '../../types/widget.type';
 import { CardSubtitle, CardTitle, List } from 'reactstrap';
 import classNames from './list.module.scss';
+import { useEffect, useState } from 'react';
+import { PokemonSpeciesType } from '../../types/pokemon-species.type';
 
 export interface IListComponentProps {
     widget: WidgetType
 };
 
 const ListComponent: React.FunctionComponent<IListComponentProps> = props => {
+    const [pokemonList, setPokemonList] = useState<PokemonSpeciesType[] | []>([])
+    
+    const getPokemonCount = async () => {
+        const response = await fetch(props.widget.api);
+        const data = await response.json();
+
+        setPokemonList(data.results);
+    }
+
+    useEffect(() => {
+        getPokemonCount();
+    });
+
     return (
         <div className={classNames.listContainer}>
             <CardTitle tag="h4" className={classNames.listTitle}>
@@ -16,15 +31,9 @@ const ListComponent: React.FunctionComponent<IListComponentProps> = props => {
                 {props.widget.subtitle}
             </CardSubtitle>
             <List className={classNames.list}>
-                <li>
-                    Lorem ipsum
-                </li>
-                <li>
-                    Phasellus iaculis
-                </li>
-                <li>
-                    Nulla volutpat
-                </li>
+                {pokemonList.map((value: PokemonSpeciesType, index: number) => (
+                    <li className={classNames.textProper} key={`${index}-${value.name}`}>{value.name}</li>
+                ))}
             </List>
         </div>
     );

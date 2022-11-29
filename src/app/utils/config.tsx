@@ -2,10 +2,10 @@ export const configuration = {
     columns: [
         { // First column
             size: 1, // The size of the column
-            heading: "General Pokemon information",
+            heading: "General Pokemon Information",
             widgets: [
                 {
-                    title: "Pokemon colours",
+                    title: "Pokemon Colours",
                     subtitle: "List of all the colours",
                     type: "list",
                     api: "https://pokeapi.co/api/v2/pokemon-color/"
@@ -20,20 +20,20 @@ export const configuration = {
         },
         { // Second column
             size: 2, // The size of the column
-            heading: "Pokemon counts",
+            heading: "Pokemon Counts",
             widgets: [
                 {
-                    title: "Genderless count",
+                    title: "Genderless Counts",
                     type: "number",
                     api: "https://pokeapi.co/api/v2/gender/3/"
                 },
                 {
-                    title: "Female count",
+                    title: "Female Counts",
                     type: "number",
                     api: "https://pokeapi.co/api/v2/gender/1/"
                 },
                 {
-                    title: "Male count",
+                    title: "Male Counts",
                     type: "number",
                     api: "https://pokeapi.co/api/v2/gender/2/"
                 },

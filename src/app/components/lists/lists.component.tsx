@@ -14,7 +14,7 @@ const ListsComponent: React.FunctionComponent<IListsComponentProps> = props => {
                 <h1>{props.heading}</h1>
                 <div className={classNames.listsContent}>
                     {props.widgets.map((widget: WidgetType, index: number) => (
-                        <ListComponent widget={widget}></ListComponent>
+                        <ListComponent key={index} widget={widget}></ListComponent>
                     ))}
                 </div>
             </div>

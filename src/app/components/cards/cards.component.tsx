@@ -14,7 +14,7 @@ const CardsComponent: React.FunctionComponent<ICardsComponentComponentProps> = p
                 <h1>{props.heading}</h1>
                 <div className={classNames.cardsContent}>
                     {props.widgets.map((widget: WidgetType, index: number) => (
-                        <CardComponent widget={widget}></CardComponent>
+                        <CardComponent key={index} widget={widget}></CardComponent>
                     ))}
                 </div>
             </div>
