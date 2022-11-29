@@ -1,26 +1,22 @@
 import { WidgetType } from '../../types/widget.type';
-import { Col, Row, Container } from 'reactstrap';
 import classNames from './lists.module.scss';
+import ListComponent from '../list/list.component';
 
 export interface IListsComponentProps {
-    widgets: WidgetType[]
+    widgets: WidgetType[],
+    heading: string
 };
 
 const ListsComponent: React.FunctionComponent<IListsComponentProps> = props => {
     return (
         <div className={classNames.lists}>
             <div className={classNames.listsContainer}>
-                <Container className='grid-container height-100' fluid>
-                    <Row fluid className='rows text-center'>
-                        {props.widgets.map((widget: WidgetType, index: number) => (
-                            <Col fluid key={index} md='12' className='columns'>
-                                <p>
-                                    {widget.title}
-                                </p>
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
+                <h1>{props.heading}</h1>
+                <div className={classNames.listsContent}>
+                    {props.widgets.map((widget: WidgetType, index: number) => (
+                        <ListComponent widget={widget}></ListComponent>
+                    ))}
+                </div>
             </div>
         </div>
     );
