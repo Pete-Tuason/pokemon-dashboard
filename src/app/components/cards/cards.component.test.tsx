@@ -11,13 +11,13 @@ const widgets: WidgetType[] = [{
 const heading = 'heading';
 
 test('renders cards component and expects the div named cards', () => {
-    render(<CardsComponent key={1} widgets={widgets} heading={heading} />);
+    render(<CardsComponent columns={1} key={1} widgets={widgets} heading={heading} />);
     const cardsElement = screen.getByTestId('cards');
     expect(cardsElement).toBeInTheDocument();
 });
 
 test('renders cards component and expects widget heading', () => {
-    render(<CardsComponent key={2} widgets={widgets} heading={heading} />);
+    render(<CardsComponent columns={1} key={2} widgets={widgets} heading={heading} />);
     const headingText = screen.getByText(heading);
     expect(headingText).toBeInTheDocument();
 });

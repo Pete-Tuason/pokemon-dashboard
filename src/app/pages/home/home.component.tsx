@@ -19,8 +19,8 @@ const HomePage: React.FunctionComponent<IHomePageProps> = props => {
                     {config.map((column: ColumnType, index: number) => (
                         <Col key={index} md={column.size * 3} className='columns'>
                             {column.widgets[0].type === 'list' ?
-                                <ListsComponent key={index} heading={column.heading} widgets={column.widgets}></ListsComponent> :
-                                <CardsComponent key={index} heading={column.heading} widgets={column.widgets}></CardsComponent>
+                                <ListsComponent columns={column.size} key={index} heading={column.heading} widgets={column.widgets}></ListsComponent> :
+                                <CardsComponent columns={column.size} key={index} heading={column.heading} widgets={column.widgets}></CardsComponent>
                             }
                         </Col>
                     ))}

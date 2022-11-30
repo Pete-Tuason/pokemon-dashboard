@@ -1,10 +1,12 @@
 import { WidgetType } from '../../types/widget.type';
 import classNames from './lists.module.scss';
 import ListComponent from '../list/list.component';
+import { Col } from 'reactstrap';
 
 export interface IListsComponentProps {
     widgets: WidgetType[],
-    heading: string
+    heading: string,
+    columns: number
 };
 
 const ListsComponent: React.FunctionComponent<IListsComponentProps> = props => {
@@ -14,7 +16,9 @@ const ListsComponent: React.FunctionComponent<IListsComponentProps> = props => {
                 <h1>{props.heading}</h1>
                 <div className={classNames.listsContent}>
                     {props.widgets.map((widget: WidgetType, index: number) => (
-                        <ListComponent key={index} widget={widget}></ListComponent>
+                        <Col key={index} md={12 / props.columns} className='columns'>
+                            <ListComponent key={index} widget={widget}></ListComponent>
+                        </Col>
                     ))}
                 </div>
             </div>
